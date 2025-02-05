@@ -1,16 +1,18 @@
 'use client'
-import Modal from '@/components/modais/modal';
+import Modal from '@/components/modals/modal';
 import { Checkbox } from '@/components/ui/checkbox';
 import { DatePicker } from '@/components/ui/date-picker';
 import { SubTodo, TodoList } from '@/types/TodoList';
 import React, { useCallback, useEffect, useState } from 'react';
-import { Pencil, CircleUser } from 'lucide-react';
-import NameModal from '@/components/modais/name modal';
+import { Pencil, CircleUser, Info } from 'lucide-react';
+import NameModal from '@/components/modals/name modal';
+import InfoModal from '@/components/modals/info modal';
 
 const Home = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [showNameModal, setShowNameModal] = useState(true);
+  const [showInfoModal, setShowInfoModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState<boolean>(false);
   const [attModal, setAttModal] = useState<boolean>(false);
   const [user, setUser] = useState('');
@@ -137,8 +139,9 @@ const Home = () => {
   return (
     <div className="block h-screen w-screen items-center justify-center overflow-x-hidden overflow-y-auto bg-gray-100">
       <div className='bg-zinc-800 w-full h-[250px] p-6 inset-0 flex flex-col items-center z-0 text-white'>
-        <div className='w-full relative justify-start items-start'>
+        <div className='w-full flex justify-start items-start gap-3'>
           <CircleUser className='w-7 h-7 cursor-pointer' onClick={() => setShowNameModal(true)}/>
+          <Info className='w-7 h-7 cursor-pointer' onClick={() => setShowInfoModal(!showInfoModal)}/>
         </div>
         <div className='flex flex-col lg:flex-row w-full justify-center items-center lg:justify-between lg:pr-60 pb-16 lg:pl-28 select-none gap-4'>
           <div className='bg-gradient-white bg-[length:200%_200%] animate-gradient-move p-[2px] rounded-md'>
@@ -277,6 +280,10 @@ const Home = () => {
         show={showNameModal}
         onClose={() => setShowNameModal(false)}
         onSubmit={setUser}
+        />
+        <InfoModal 
+        show={showInfoModal}
+        onClose={() => setShowInfoModal(false)}
         />
       </div>
     </div>
