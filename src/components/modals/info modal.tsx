@@ -7,7 +7,7 @@ const InfoModal = ({ show, onClose}:
 
   return (
     <div className="fixed inset-0 w-screen h-screen bg-black bg-opacity-50 z-50 flex items-center justify-center select-none">
-      <div className="border-2 border-gray-300 bg-black/70 w-11/12 h-3/6 lg:w-2/3 lg:h-[40%] p-10 rounded-lg z-60 flex flex-col relative justify-between overflow-x-hidden overflow-y-auto">
+      <div className="border-2 border-gray-300 bg-black/70 w-11/12 min-h-2/6 lg:w-2/3 lg:h-[40%] p-10 rounded-lg z-60 flex flex-col relative justify-between overflow-x-hidden overflow-y-auto">
         <div className='mt-6'>
           <div className='bg-gradient-white bg-[length:200%_200%] animate-gradient-move p-[2px] rounded-md'>
             <div className='bg-white p-2 rounded-md'>
@@ -20,7 +20,7 @@ const InfoModal = ({ show, onClose}:
             </div>
           </div>
         </div>
-        <div className='w-full pb-5'>
+        <div className='w-full pb-5 mt-3'>
           <div className='bg-gradient-white bg-[length:200%_200%] animate-gradient-move p-[2px] rounded-md'>
             <button 
             onClick={() => onClose()} 
