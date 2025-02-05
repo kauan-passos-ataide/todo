@@ -83,19 +83,23 @@ const Modal = ({ show, onClose, onSubmit, todoForEdit, onDate }:
   return (
     <div className="fixed inset-0 w-screen h-screen bg-black bg-opacity-50 z-50 flex items-center justify-center">
       <div className="bg-gray-100 w-11/12 lg:w-2/3 h-4/5 p-10 rounded-lg z-60 block items-center justify-center overflow-x-hidden overflow-y-auto">
-        <div className='flex flex-row gap-5 select-none justify-between'>
-          <button onClick={onClose} className="px-4 py-2 border-2 border-red-600 text-red-600 rounded-md hover:text-white hover:bg-red-600 transition-all duration-300">
-            Fechar
-          </button>
-          <button onClick={handleSubmit} className="px-14 py-2 w-full bg-gradient-zinc bg-[length:200%_200%] animate-gradient-move text-white rounded flex justify-center items-center hover:bg-zinc-900 select-none">
-            Salvar
-          </button>
-          {todoForEdit? (
-            <button onClick={handleDelete} className="px-4 py-2 border-2 border-red-600 text-red-600 rounded-md hover:text-white hover:bg-red-600 transition-all duration-300">
-              <Trash2 />
+        <div className='flex flex-col gap-3 select-none'>
+          <div className='flex flex-row gap-5 select-none justify-between'>
+            <button onClick={onClose} className="px-4 py-2 border-2 border-red-600 text-red-600 rounded-md hover:text-white hover:bg-red-600 transition-all duration-300">
+              Fechar
             </button>
-          )
-          : []}
+            <button onClick={handleSubmit} className="px-14 py-2 w-full bg-gradient-zinc bg-[length:200%_200%] animate-gradient-move text-white rounded flex justify-center items-center hover:bg-zinc-900 select-none">
+              Salvar
+            </button>
+          </div>
+          <div>
+            {todoForEdit? (
+              <button onClick={handleDelete} className="px-4 py-2 border-2 border-red-600 text-red-600 rounded-md hover:text-white hover:bg-red-600 transition-all duration-300">
+                <Trash2 />
+              </button>
+            )
+            : []}
+          </div>
         </div>
         <div>
           <div className="mt-6 select-none">
