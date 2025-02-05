@@ -138,7 +138,7 @@ const Home = () => {
 
   return (
     <div className="block h-screen w-screen items-center justify-center overflow-x-hidden overflow-y-auto bg-gray-100">
-      <div className='bg-zinc-800 w-full h-[250px] p-6 inset-0 flex flex-col items-center z-0 text-white'>
+      <div className='bg-zinc-800 w-full h-[270px] p-6 inset-0 flex flex-col items-center z-0 text-white gap-3'>
         <div className='w-full flex justify-start items-start gap-3'>
           <CircleUser className='w-7 h-7 cursor-pointer' onClick={() => setShowNameModal(true)}/>
           <Info className='w-7 h-7 cursor-pointer' onClick={() => setShowInfoModal(!showInfoModal)}/>
