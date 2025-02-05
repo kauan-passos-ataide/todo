@@ -22,7 +22,8 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ## Learn More
 
-This is a project created by Kauan Passos Ataide, for more about me, follow me: [https://www.instagram.com/kauan.gkpa/?hl=pt-br] and [https://github.com/kauan-passos-ataide?tab=repositories].
-I used a local storage to this project, for be 100% free for all users.
+This project was created by Kauan Passos Ataide. To learn more about my work, follow me on Instagram [https://www.instagram.com/kauan.gkpa/?hl=pt-br] and check out my repositories and profile on GitHub [https://github.com/kauan-passos-ataide].
+
+I implemented local storage in this project to ensure it remains completely free for all users.
 
 XD
