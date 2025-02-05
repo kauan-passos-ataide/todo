@@ -21,17 +21,19 @@ const Home = () => {
   const [selectedDateToAdd, setSelectedDateToAdd] = useState<string | undefined>(undefined);
   const [titleToAdd, setTitleToAdd] = useState<string>("");
   const [shouldAddTask, setShouldAddTask] = useState<boolean>(false);
-  
-  if(sistemInitialize) {
-    if(localStorage.hasOwnProperty("todoItem")) {
-      setTodoItem(JSON.parse(localStorage.getItem("todoItem")!));
+
+  if (typeof window !== "undefined") {
+    if(sistemInitialize) {
+      if(localStorage.hasOwnProperty("todoItem")) {
+        setTodoItem(JSON.parse(localStorage.getItem("todoItem")!));
+      }
+      if(localStorage.hasOwnProperty("user")) {
+        setUser(localStorage.getItem("user")!);
+        setShowNameModal(false);
+      }
+      
+      setSistemInitialize(false);
     }
-    if(localStorage.hasOwnProperty("user")) {
-      setUser(localStorage.getItem("user")!);
-      setShowNameModal(false);
-    }
-    
-    setSistemInitialize(false);
   }
   
   useEffect(() => {
