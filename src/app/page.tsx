@@ -14,7 +14,6 @@ const Home = () => {
   const [showEditModal, setShowEditModal] = useState<boolean>(false);
   const [attModal, setAttModal] = useState<boolean>(false);
   const [user, setUser] = useState('');
-  const [sistemInitialize, setSistemInitialize] = useState(true);
   const [todoItem, setTodoItem] = useState<TodoList[]>([]);
   const [subTodoItem, setSubTodoItem] = useState<SubTodo[]>([]);
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
@@ -22,8 +21,7 @@ const Home = () => {
   const [titleToAdd, setTitleToAdd] = useState<string>("");
   const [shouldAddTask, setShouldAddTask] = useState<boolean>(false);
 
-  if (typeof window !== "undefined") {
-    if(sistemInitialize) {
+    useEffect(() => {
       if(localStorage.hasOwnProperty("todoItem")) {
         setTodoItem(JSON.parse(localStorage.getItem("todoItem")!));
       }
@@ -31,10 +29,7 @@ const Home = () => {
         setUser(localStorage.getItem("user")!);
         setShowNameModal(false);
       }
-      
-      setSistemInitialize(false);
-    }
-  }
+    }, [])
   
   useEffect(() => {
     localStorage.setItem("todoItem", JSON.stringify(todoItem));
