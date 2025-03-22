@@ -182,7 +182,7 @@ const Home = () => {
             onClick={() => setShowInfoModal(!showInfoModal)}
           />
         </div>
-        <div className="flex flex-col lg:flex-row w-full justify-center items-center lg:justify-between lg:pr-60 pb-16 lg:pl-28 select-none gap-4">
+        <div className="flex flex-col lg:flex-row w-full justify-center items-center lg:justify-between lg:pr-60 pb-16 lg:pl-28 gap-4">
           <div className="bg-gradient-white bg-[length:200%_200%] animate-gradient-move p-[2px] rounded-md">
             <span className="px-3 py-1 bg-zinc-800 rounded-md">
               {`Olá ${user}, seja bem-vindo(a)!`}
@@ -212,7 +212,7 @@ const Home = () => {
                       : "p-0"
                   }`}
                 >
-                  <div className="py-2 bg-white rounded-t-xl px-5 lg:px-14 flex justify-between border-b border-zinc-200 cursor-pointer select-none">
+                  <div className="py-2 bg-white rounded-t-xl px-5 lg:px-14 flex justify-between border-b border-zinc-200 cursor-pointer">
                     <div
                       className="w-12 border-r border-zinc-300"
                       onClick={() => onOpenModal(item.id)}
@@ -242,7 +242,7 @@ const Home = () => {
                       <Checkbox checked={item.checked} />
                     </div>
                   </div>
-                  <div className="w-full select-none">
+                  <div className="w-full">
                     {expandedTask === item.id && (
                       <div className="rounded-b-xl bg-white">
                         {item.subTodo.map((todo) => (
@@ -290,7 +290,7 @@ const Home = () => {
                       : "p-0"
                   }`}
                 >
-                  <div className="py-2 px-5 lg:px-14 flex rounded-t-xl bg-white justify-between border-b-2 border-zinc-200 cursor-pointer select-none">
+                  <div className="py-2 px-5 lg:px-14 flex rounded-t-xl bg-white justify-between border-b-2 border-zinc-200 cursor-pointer">
                     <div
                       className="w-12 border-r border-zinc-300"
                       onClick={() => onOpenModal(item.id)}
@@ -320,7 +320,7 @@ const Home = () => {
                       <Checkbox checked={item.checked} />
                     </div>
                   </div>
-                  <div className="w-full select-none">
+                  <div className="w-full">
                     {expandedTask === item.id && (
                       <div className="bg-white rounded-b-xl">
                         {item.subTodo.map((todo) => (
