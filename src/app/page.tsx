@@ -4,14 +4,16 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { DatePicker } from "@/components/ui/date-picker";
 import { SubTodo, TodoList } from "@/types/TodoList";
 import React, { useCallback, useEffect, useState } from "react";
-import { Pencil, CircleUser, Info } from "lucide-react";
+import { Pencil, CircleUser, Info, Link as LinkIcon } from "lucide-react";
 import NameModal from "@/components/modals/name modal";
 import InfoModal from "@/components/modals/info modal";
+import { LinksModal } from "@/components/modals/links modal";
 
 const Home = () => {
   const [showModal, setShowModal] = useState(false);
   const [showNameModal, setShowNameModal] = useState(true);
   const [showInfoModal, setShowInfoModal] = useState(false);
+  const [showLinksModal, setShowLinksModal] = useState(true);
   const [showEditModal, setShowEditModal] = useState<boolean>(false);
   const [attModal, setAttModal] = useState<boolean>(false);
   const [user, setUser] = useState("");
@@ -180,6 +182,10 @@ const Home = () => {
           <Info
             className="w-7 h-7 cursor-pointer"
             onClick={() => setShowInfoModal(!showInfoModal)}
+          />
+          <LinkIcon
+            className="w-7 h-7 cursor-pointer"
+            onClick={() => setShowLinksModal(!showLinksModal)}
           />
         </div>
         <div className="flex flex-col lg:flex-row w-full justify-center items-center lg:justify-between lg:pr-60 pb-16 lg:pl-28 gap-4">
@@ -372,6 +378,10 @@ const Home = () => {
         <InfoModal
           show={showInfoModal}
           onClose={() => setShowInfoModal(false)}
+        />
+        <LinksModal
+        show={showLinksModal}
+        onClose={() => setShowLinksModal(false)}
         />
       </div>
     </div>
