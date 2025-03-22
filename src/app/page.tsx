@@ -13,7 +13,7 @@ const Home = () => {
   const [showModal, setShowModal] = useState(false);
   const [showNameModal, setShowNameModal] = useState(true);
   const [showInfoModal, setShowInfoModal] = useState(false);
-  const [showLinksModal, setShowLinksModal] = useState(true);
+  const [showLinksModal, setShowLinksModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState<boolean>(false);
   const [attModal, setAttModal] = useState<boolean>(false);
   const [user, setUser] = useState("");

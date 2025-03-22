@@ -1,6 +1,6 @@
 "use client";
 import { CornerUpLeft, Link as LinkIcon, Trash2 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const LinksModal = ({
   show,
@@ -25,11 +25,21 @@ export const LinksModal = ({
     setLinks(links.filter((_, i) => i !== index));
   };
 
+  useEffect(() => {
+      if (localStorage.hasOwnProperty("links")) {
+        setLinks(JSON.parse(localStorage.getItem("links")!));
+      }
+    }, []);
+  
+    useEffect(() => {
+      localStorage.setItem("links", JSON.stringify(links));
+    }, [links]);
+
   if (!show) return null;
 
   return (
     <main className="bg-zinc-800 fixed inset-0 p-10 transition-all duration-500 overflow-x-hidden overflow-y-auto">
-      <div className="flex flex-row w-full">
+      <div className="flex flex-row w-full select-none">
         <div className="flex justify-start items-center">
           <CornerUpLeft
             onClick={onClose}
@@ -51,7 +61,7 @@ export const LinksModal = ({
         />
         <button
           onClick={handleAddLink}
-          className="py-1 px-5 bg-white border text-zinc-800 rounded-md hover:bg-zinc-800 hover:text-white transition-all duration-500 ease-in-out hover:border-white"
+          className="py-1 px-5 bg-white border text-zinc-800 rounded-md hover:bg-zinc-800 hover:text-white transition-all duration-500 ease-in-out hover:border-white select-none"
         >
           Adicionar
         </button>
